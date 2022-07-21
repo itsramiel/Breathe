@@ -11,7 +11,7 @@ interface CircleProps {
 
 const Circle = ({ index, progress, length, initialAngle }: CircleProps) => {
   const rStyle = useAnimatedStyle(() => {
-    const startingAngle = (index * (2 * Math.PI)) / 3 + initialAngle;
+    const startingAngle = (index * (2 * Math.PI)) / 2 + initialAngle;
     const SIZE = interpolate(progress.value, [0, 1], [SCREEN_WIDTH / 6, SCREEN_WIDTH / 2]);
     return {
       width: SIZE,

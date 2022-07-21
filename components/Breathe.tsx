@@ -6,7 +6,7 @@ const Breathe = () => {
   const progress = useSharedValue<0 | 1>(0);
 
   const data = useMemo(() => {
-    return Array(3).fill(0);
+    return Array(2).fill(0);
   }, []);
 
   useEffect(() => {
@@ -19,7 +19,10 @@ const Breathe = () => {
         return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={0} />;
       })}
       {data.map((_, i) => {
-        return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={Math.PI / 3} />;
+        return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={(2 * Math.PI * 1) / 3} />;
+      })}
+      {data.map((_, i) => {
+        return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={(2 * Math.PI * 2) / 3} />;
       })}
     </>
   );
