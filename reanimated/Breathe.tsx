@@ -2,6 +2,7 @@ import { Easing, useSharedValue, withRepeat, withTiming } from "react-native-rea
 import React, { useEffect, useMemo } from "react";
 import Circle from "./Circle";
 import { COLORS } from "../constants";
+import { StyleSheet, View } from "react-native";
 
 const Breathe = () => {
   const progress = useSharedValue<0 | 1>(0);
@@ -15,7 +16,7 @@ const Breathe = () => {
   }, []);
 
   return (
-    <>
+    <View style={styles.container}>
       {data.map((_, i) => {
         return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={0} color={COLORS[i]} />;
       })}
@@ -25,8 +26,16 @@ const Breathe = () => {
       {data.map((_, i) => {
         return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={(2 * Math.PI * 2) / 3} color={COLORS[i]} />;
       })}
-    </>
+    </View>
   );
 };
 
 export default Breathe;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
