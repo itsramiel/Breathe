@@ -35,7 +35,9 @@ export default function App() {
           headerStyle: { backgroundColor: "#111" },
           headerShadowVisible: false,
           tabBarActiveTintColor: "#59ADA1",
-          // tabBarActiveBackgroundColor: "#000",
+          tabBarActiveBackgroundColor: "#000",
+          tabBarInactiveBackgroundColor: "#000",
+          tabBarStyle: { borderTopColor: "#222", borderTopWidth: 1 },
         }}
       >
         <Screen name="Reanimated" component={ReanimatedBreathe} options={reanimatedOptions} />
