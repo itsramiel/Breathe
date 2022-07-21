@@ -19,9 +19,9 @@ const Circle = ({ index, progress, length, initialAngle }: CircleProps) => {
       backgroundColor: COLOR,
       borderRadius: SIZE / 2,
       transform: [
-        { translateY: SIZE / 2 },
+        { translateY: SIZE / 2 - SIZE / 2 },
         { rotate: `${startingAngle + interpolate(progress.value, [0, 1], [0, Math.PI / 2])}rad` },
-        { translateY: -(SIZE / 2) + +interpolate(progress.value, [0, 1], [SIZE / 2, 0]) },
+        { translateY: -(SIZE / 2) + interpolate(progress.value, [0, 1], [SIZE / 2, 0]) },
       ],
       position: "absolute",
       opacity: 1 / length,
