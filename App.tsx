@@ -40,8 +40,8 @@ export default function App() {
           tabBarStyle: { borderTopColor: "#222", borderTopWidth: 1 },
         }}
       >
-        <Screen name="Skia" component={SkiaBreathe} options={skiaOptions} />
         <Screen name="Reanimated" component={ReanimatedBreathe} options={reanimatedOptions} />
+        <Screen name="Skia" component={SkiaBreathe} options={skiaOptions} />
       </Navigator>
     </NavigationContainer>
   );

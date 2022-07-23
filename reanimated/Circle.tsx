@@ -4,20 +4,19 @@ import { SCREEN_WIDTH } from "../constants";
 
 interface CircleProps {
   index: number;
-  length: number;
   progress: Animated.SharedValue<0 | 1>;
   initialAngle: number;
   color: string;
 }
 
-const Circle = ({ index, progress, length, initialAngle, color }: CircleProps) => {
+const Circle = ({ index, progress, initialAngle, color }: CircleProps) => {
   const rStyle = useAnimatedStyle(() => {
     const startingAngle = (index * (2 * Math.PI)) / 2 + initialAngle;
-    const SIZE = interpolate(progress.value, [0, 1], [SCREEN_WIDTH / 8, SCREEN_WIDTH / 3]);
+    const SIZE = interpolate(progress.value, [0, 1], [SCREEN_WIDTH / 9, SCREEN_WIDTH / 3]);
     return {
       width: SIZE,
       height: SIZE,
-      backgroundColor: interpolateColor(progress.value, [0, 0.3], ["#aaa", color]),
+      backgroundColor: interpolateColor(progress.value, [0, 0.3], ["#fff", color]),
       borderRadius: SIZE / 2,
       transform: [
         { translateY: SIZE / 2 - SIZE / 2 },
@@ -25,9 +24,9 @@ const Circle = ({ index, progress, length, initialAngle, color }: CircleProps) =
         { translateY: -(SIZE / 2) + interpolate(progress.value, [0, 1], [SIZE / 2, 0]) },
       ],
       position: "absolute",
-      opacity: 1 / length,
+      opacity: 1 / 6,
     };
-  }, [index, length]);
+  }, [index]);
 
   return <Animated.View style={rStyle} />;
 };

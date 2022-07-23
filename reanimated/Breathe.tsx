@@ -18,13 +18,13 @@ const Breathe = () => {
   return (
     <View style={styles.container}>
       {data.map((_, i) => {
-        return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={0} color={COLORS[i]} />;
+        return <Circle index={i} progress={progress} key={i} initialAngle={0} color={COLORS[i]} />;
       })}
       {data.map((_, i) => {
-        return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={(2 * Math.PI * 1) / 3} color={COLORS[1 - i]} />;
+        return <Circle index={i} progress={progress} key={i} initialAngle={(2 * Math.PI * 1) / 3} color={COLORS[1 - i]} />;
       })}
       {data.map((_, i) => {
-        return <Circle index={i} progress={progress} key={i} length={data.length} initialAngle={(2 * Math.PI * 2) / 3} color={COLORS[i]} />;
+        return <Circle index={i} progress={progress} key={i} initialAngle={(2 * Math.PI * 2) / 3} color={COLORS[i]} />;
       })}
     </View>
   );
